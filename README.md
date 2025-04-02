@@ -1,145 +1,146 @@
+# Foundations of Applied Machine Learning
+
+These notes summarize the weekly sessions from the *Foundations of Applied Machine Learning* course at UC Riverside. Each session builds upon foundational ideas, with explanations, use cases, and key theoretical insights.
+
+---
+
 ## Session 1: Introduction to Machine Learning
 
-In this session, we introduced the course goals, discussed the foundations of machine learning, and explored basic Python functions through hands-on coding.
+We began by discussing what machine learning is—automating pattern recognition through data-driven algorithms. We also covered basic programming concepts in Python as a foundation.
 
-**Key Concepts Covered:**
-- What is Machine Learning?
-- Types of ML: Supervised, Unsupervised, Reinforcement Learning
-- Real-world applications of ML
-- Importance of data preparation and evaluation
+**Covered Topics:**
+- What is ML? Supervised vs. Unsupervised vs. Reinforcement Learning
+- How computers “learn” from data
+- Common ML applications (e.g., image recognition, finance, healthcare)
+- Basic Python: variables, loops, conditionals, built-in functions
 
-**Hands-On Exercise:**
-- Simulating a random walk in Python
-- Using core Python built-in functions: `abs()`, `all()`, `any()`, `max()`, `min()`, `sum()`
-
-This session established a conceptual and technical baseline for the rest of the course.
+---
 
 ## Session 2: Object-Oriented Programming and Probabilistic Thinking
 
-This session introduced two important computational and statistical tools: object-oriented programming (OOP) for modular code development, and probabilistic programming for reasoning under uncertainty.
+This session introduced Object-Oriented Programming (OOP), followed by a conceptual entry into probabilistic reasoning and Bayesian thinking.
 
-### Part 1: Object-Oriented Programming (OOP)
-We discussed the fundamental principles of OOP and implemented custom classes in Python.
-
-**Key Concepts:**
-- `class` vs `object`
-- Attributes and methods
-- Constructors (`__init__`)
+**OOP Concepts:**
+- Class, object, method, attribute
 - Encapsulation and reusability
+- Importance in structuring large ML projects
 
-**Applications:** OOP allows the creation of reusable, maintainable, and scalable code—vital for building large ML pipelines or simulation tools.
+**Probabilistic Programming:**
+- Probability distributions and Bayes' Rule
+- Modeling uncertainty and learning from data
+- Motivation behind using prior beliefs in probabilistic models
 
-### Part 2: Introduction to Probabilistic Programming
-Students were introduced to Bayesian inference and how probability distributions are used to model uncertainty.
+---
 
-**Key Concepts:**
-- Probability distributions and likelihood
-- Bayesian inference and belief updating
-- Gaussian functions and prior/posterior reasoning
+## Session 3: Least Squares and Model Fitting
 
-**Applications:** This forms the foundation of modern probabilistic machine learning, including Bayesian networks, generative models, and decision-making systems.
+We covered curve fitting using least squares, a classical technique in statistics and ML. The idea is to choose parameters that minimize the total squared error between predictions and actual data.
 
-## Session 3: Least Squares and Parameter Estimation
+**Theory:**
+- Least squares loss: \( \sum (y_i - f(x_i))^2 \)
+- Used for linear and nonlinear regression models
+- Can be interpreted probabilistically as maximum likelihood under Gaussian noise
 
-In this session, we explored one of the most fundamental techniques in machine learning and statistical modeling: the **least squares method**. We demonstrated how it can be used to fit models to data and estimate parameters by minimizing the squared error between observed and predicted values.
+**Strengths:** Simple, interpretable, analytical solution available  
+**Limitations:** Sensitive to outliers, assumes linearity unless extended
 
-### Key Concepts:
-- Least squares as an optimization objective
-- Parameterized functions (e.g., $y = \alpha x e^{\gamma x}$)
-- Sampling parameter space to minimize loss
-- Connection between minimizing squared error and maximizing likelihood under Gaussian noise
+---
 
-### Applications:
-Least squares fitting is a cornerstone of regression analysis and appears in nearly all forms of supervised learning, from simple linear regression to complex neural networks.
+## Session 4: Monte Carlo Simulation & Bayesian Inference
 
-## Session 4: Monte Carlo Simulation and Bayesian Inference
+We simulated a coin-toss experiment and explored how uncertainty is handled using **Bayesian inference**.
 
-This session introduced Monte Carlo methods for probabilistic simulation and applied them to a coin-flipping experiment to test fairness. We used the binomial distribution and Bayesian inference to estimate the probability of heads in repeated coin tosses.
+**Key Ideas:**
+- Monte Carlo: random sampling to approximate solutions
+- Binomial distribution for discrete outcomes
+- Bayes’ Theorem: updating beliefs given evidence
+- Priors (uniform) and posteriors over probability of fairness
 
-### Key Concepts:
-- Monte Carlo simulation using random sampling
-- Modeling coin tosses with the binomial distribution
-- Prior and posterior distributions
-- Uniform priors and Bayesian updating
+**Use Cases:** A/B testing, diagnostics, reliability modeling
 
-### Applications:
-Monte Carlo methods are widely used in risk assessment, computational physics, probabilistic modeling, and evaluating systems where analytical solutions are intractable.
+---
 
-## Session 5: Clustering and K-Means
+## Session 5: Clustering with K-Means
 
-This session focused on **unsupervised learning**, specifically clustering, where the goal is to group similar data points without using labels. We introduced the K-means clustering algorithm and explored its working principles through implementation and visualization.
+This session marked the transition to **unsupervised learning**. We explored K-means clustering, where data is grouped by similarity without labels.
 
-### Key Concepts:
-- Difference between supervised and unsupervised learning
-- Clustering as a way to discover hidden patterns
-- K-means algorithm: initialization, assignment, update steps
-- Choosing the number of clusters and evaluating results
+**K-Means Process:**
+1. Randomly initialize K cluster centers
+2. Assign points to nearest cluster
+3. Update cluster centers as means of assigned points
 
-### Applications:
-Clustering is used in customer segmentation, image compression, anomaly detection, document classification, and bioinformatics to find meaningful groups in complex datasets.
+**Use Cases:** Customer segmentation, topic modeling, image compression  
+**Challenges:** Choice of K, sensitivity to initialization, assumes spherical clusters
 
-## Session 6: K-Nearest Neighbors (KNN) Classification
+---
 
-In this session, we transitioned from unsupervised clustering to supervised classification using the **K-Nearest Neighbors (KNN)** algorithm. This method assigns class labels based on the majority vote of a data point’s k-nearest neighbors in the feature space.
+## Session 6: Classification and K-Nearest Neighbors (KNN)
 
-### Key Concepts:
-- Difference between classification and regression
-- Basics of supervised learning
-- Nearest Neighbor and KNN algorithm
-- Distance metrics (e.g., Euclidean distance)
+We introduced **supervised learning**, particularly classification, where the goal is to map feature vectors to discrete labels.
 
-### Applications:
-KNN is widely used in recommendation systems, handwriting recognition, pattern classification, and medical diagnostics. It serves as a simple yet effective non-parametric model.
+**KNN Algorithm:**
+- Memory-based: no explicit training
+- Assigns label based on majority of k nearest labeled examples
+- Distance metric critical (e.g., Euclidean)
 
-## Session 6 & 7: Supervised Learning and K-Nearest Neighbors (KNN)
+**Use Cases:** Pattern recognition, recommender systems  
+**Pros:** Intuitive, non-parametric  
+**Cons:** Sensitive to noise, slow with large datasets
 
-This combined session continued our discussion on clustering and introduced **supervised learning**, where models are trained on labeled data. We focused on one of the simplest yet powerful classification techniques — the **K-Nearest Neighbors (KNN)** algorithm.
+---
 
-### Key Concepts:
-- Overview of supervised learning: regression vs. classification
-- K-Nearest Neighbor: lazy learning algorithm
-- Importance of distance metrics and neighborhood size (k)
-- Feature-label mappings in classification tasks
+## Session 6 & 7 (Combined): Practical KNN and Feature Spaces
 
-### Applications:
-KNN is practical for image recognition, document categorization, spam detection, and other problems where decision boundaries are nonlinear and data is plentiful. It also serves as a baseline model for evaluating more complex classifiers.
+We continued developing intuition for classification with hands-on examples. Visualizing decision boundaries helped show how KNN adapts to different distributions in feature space.
+
+**Topics:**
+- Influence of K and decision boundaries
+- Curse of dimensionality
+- Role of normalization and preprocessing
+
+---
 
 ## Session 8: Regression and Gradient Descent
 
-In this session, we returned to regression and examined how optimization techniques can help us estimate model parameters. We discussed analytical and numerical methods for minimizing error functions, focusing on **gradient descent** for linear regression.
+We studied linear regression and how to **optimize weights** using **gradient descent**, a numerical method to minimize loss functions.
 
-### Key Concepts:
-- Supervised learning and hypothesis space
-- Regression problem setup with feature vectors
-- Linear model in matrix form: $y = Xw$
-- Analytical solution using normal equations
-- Gradient descent for iterative optimization
+**Concepts:**
+- Regression setup with matrix notation: \( y = Xw \)
+- Loss function: squared error
+- Gradient descent update: \( w := w - \eta 
+abla L(w) \)
 
-### Applications:
-Gradient descent is at the heart of many machine learning algorithms, including deep learning, logistic regression, and matrix factorization. Understanding it is crucial for tuning models efficiently on large-scale datasets.
+**Strengths:** Scales to large data  
+**Drawbacks:** Sensitive to learning rate, local minima in non-convex loss
 
-## Session 9: Mini-Batch Gradient Descent and Optimization Techniques
+---
 
-This session advanced the discussion on optimization by introducing **stochastic gradient descent (SGD)** and **mini-batch gradient descent**. These methods allow us to scale learning to large datasets by updating weights incrementally.
+## Session 9: Mini-Batch Gradient Descent
 
-### Key Concepts:
-- Limitations of full-batch gradient descent
-- Stochastic vs. mini-batch updates
-- Trade-offs between convergence speed and stability
-- Implementation of mini-batch logic in training loops
+We extended gradient descent to handle larger datasets using **mini-batch updates**.
 
-### Applications:
-Mini-batch optimization is critical in training large models efficiently. It's used in nearly all modern neural network frameworks (e.g., TensorFlow, PyTorch) and helps improve generalization through noise injection during updates.
+**Ideas:**
+- Full-batch: stable but slow
+- Stochastic (SGD): fast but noisy
+- Mini-batch: trade-off for efficiency and convergence stability
 
-## Session 10: Introduction to Neural Networks
+**Context:** Backbone of modern neural networks and deep learning frameworks
 
-In the final session of the course, we introduced **neural networks**—a powerful class of machine learning models inspired by the human brain. We focused on understanding the structure and function of feedforward neural networks.
+---
 
-### Key Concepts:
-- Neurons, activation functions, and network architecture
-- Forward propagation of input data through layers
-- Importance of non-linearity for learning complex patterns
-- Training using gradient descent and backpropagation
+## Session 10: Neural Networks
 
-### Applications:
-Neural networks are the foundation of deep learning, enabling breakthroughs in image classification, speech recognition, natural language processing, and generative modeling.
+We closed the course by introducing **feedforward neural networks**—a foundational architecture in deep learning.
+
+**Core Ideas:**
+- Layers of neurons apply linear transformation + non-linear activation
+- Forward propagation passes input through layers to output
+- Backpropagation updates weights using chain rule and loss gradients
+
+**Activation Functions:** Sigmoid, ReLU  
+**Applications:** Image/speech recognition, NLP, game AI  
+**Challenges:** Overfitting, vanishing gradients, need for large data
+
+---
+
+This concludes the course outline. These sessions covered theoretical insights, practical techniques, and implementation skills in applied machine learning.
